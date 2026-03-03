@@ -10,7 +10,13 @@ namespace COMP003A.FinalProject
         public string ApplicantName;
         public string ApplicationDate = DateTime.Now.ToString("MM/dd/yyyy");
 
-
+        public FriendApplication(int id, string name)
+        {
+            Id = id;
+            ApplicantName = name;
+            ApplicationDate = DateTime.Now.ToString("MM/dd/yyyy");
+            
+        }
         
     }
 }
