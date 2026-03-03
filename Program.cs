@@ -7,11 +7,10 @@ namespace COMP003A.FinalProject
     {
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Hello, World!");
-
-            Console.WriteLine("test");
+           
             bool running = true;
+
+            List<FriendApplication> friendApplications = new List<FriendApplication>();
 
             Console.WriteLine("Welcome to my Friendship Application!");
 
