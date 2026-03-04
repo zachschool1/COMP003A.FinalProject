@@ -194,6 +194,7 @@ namespace COMP003A.FinalProject
             Console.WriteLine($"Gender: {Gender}");
             Console.WriteLine($"Status: {Status}");
             Console.WriteLine($"Desperation Level: {DesperationLevel}");
+            Console.WriteLine($"Submitted: {ApplicationDate}");
             Console.WriteLine();
             Console.WriteLine("******* Favorites *******");
             Console.WriteLine($"Favorite Movie Genre: {FavoriteMovieGenre}.");
