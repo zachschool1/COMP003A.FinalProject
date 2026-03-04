@@ -9,6 +9,7 @@ namespace COMP003A.FinalProject
         static void Main(string[] args)
         {
             int refusalCounter = 0;
+            
             bool running = true;
 
             List<FriendApplication> friendApplications = new List<FriendApplication>();
@@ -30,6 +31,10 @@ namespace COMP003A.FinalProject
                     if (continueResponse.ToLower().StartsWith("y"))
                     {
                         Console.WriteLine("Please fill out this short application...");
+
+
+                        //logic here for taking friend application input and creating one.
+
 
                     }
                     else if (continueResponse.ToLower().StartsWith("n"))
