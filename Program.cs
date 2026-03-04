@@ -92,11 +92,14 @@ namespace COMP003A.FinalProject
                             {
                                 case 1:
                                     Console.WriteLine("Showing All Applications");
+                                    int totalApplications = friendApplications.Count();
+                                    
 
                                     foreach (FriendApplication friend in friendApplications)
                                     {
                                         friend.ShowApplicationInfo();
                                     }
+                                    Console.WriteLine($"Total Applications: " + totalApplications);
                                     break;
                                 case 2:
                                     Console.WriteLine("Search for an application by First Name:");
