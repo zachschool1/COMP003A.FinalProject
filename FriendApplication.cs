@@ -136,6 +136,22 @@ namespace COMP003A.FinalProject
         public void determineAcceptance()
         {
             //if desperation 8+, auto deny. if 6-7, accept only if favorite color is green.
+            if (DesperationLevel >= 8)
+            {
+                Status = "Denied";
+            } else if (DesperationLevel >= 6)
+            {
+                if(FavoriteColor.ToLower() == "green")
+                {
+                    Status = "Accepted (but it was close)";
+                } else
+                {
+                    Status = "Denied";
+                }
+            } else
+            {
+                Status = "Accepted";
+            }
         }
     }
 }
