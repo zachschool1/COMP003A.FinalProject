@@ -118,7 +118,7 @@ namespace COMP003A.FinalProject
 
                                     foreach (FriendApplication friend in friendApplications)
                                     {
-                                        if (friend.ApplicantName == nameDeleteInput)
+                                        if (friend.ApplicantName.ToLower() == nameDeleteInput)
                                         {
                                             foundPerson = friend;
                                             break;
