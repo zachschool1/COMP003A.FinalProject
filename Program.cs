@@ -8,6 +8,7 @@ namespace COMP003A.FinalProject
     {
         static void Main(string[] args)
         {
+            int applicationNumber = 1;
             int refusalCounter = 0;
             
             bool running = true;
@@ -32,10 +33,16 @@ namespace COMP003A.FinalProject
                     {
                         Console.WriteLine("Please fill out this short application...");
 
+                        FriendApplication app1 = new FriendApplication(applicationNumber);
 
-                        //logic here for taking friend application input and creating one.
+                        app1.IntroInfo();
+                        Console.WriteLine("Good Job! Let's Move on to the next part!");
+                        app1.GetFavorites();
+                        Console.WriteLine("Great, Thats another part down. we're almost done!");
 
 
+
+                        applicationNumber++;
                     }
                     else if (continueResponse.ToLower().StartsWith("n"))
                     {

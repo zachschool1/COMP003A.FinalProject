@@ -7,18 +7,18 @@ namespace COMP003A.FinalProject
 {
     public class FriendApplication
     {
-        public int Id;
-        public string ApplicationDate;
+        public int Id;//
+        public string ApplicationDate;//
         //9 strings plus 1 from date
         public string ApplicantName; //
-        public string FavoriteMovieGenre;
-        public string FavoriteTvGenre;
+        public string FavoriteMovieGenre;//
+        public string FavoriteTvGenre;//
         public string FavoriteColor;
         public string FavoriteFood;
         public string FavoriteSport;
         public string FavoriteShoeBrand;
         public string FavoriteAnimal;
-        public string Gender;
+        public string Gender; //
         public string FavoriteCar;
        
         //6 numeric plus 1 from ID
@@ -51,21 +51,91 @@ namespace COMP003A.FinalProject
         {
             Console.WriteLine("What is your name?");
             string nameInput = Console.ReadLine();
+            ApplicantName = nameInput;
 
             Console.WriteLine("What Month were you born? (1-12)");
             string monthInput = Console.ReadLine();
             int month = int.Parse(monthInput);
+            BirthMonth = month;
 
             Console.WriteLine("What year were you born? (XXXX)");
             string yearInput = Console.ReadLine();
             int birthYear = int.Parse(yearInput);
+            BirthYear = birthYear;
 
             Console.WriteLine("What is your gender? (Male/Female/Other)");
             string genderInput = Console.ReadLine();
+            string gender = genderInput;
 
+        }
 
-            
+        public void GetFavorites()
+        {
+            Console.WriteLine("Let's Find out what your favorite things are!\n");
+            Console.WriteLine("What is your favorite Movie Genre?");
+            string movieGenre = Console.ReadLine();
+            FavoriteMovieGenre = movieGenre;
+
+            Console.WriteLine("What is your favorite genre of Television?");
+            string tvGenre = Console.ReadLine();
+            FavoriteTvGenre = tvGenre;
+
+            Console.WriteLine("What is your favorite color?");
+            string colorInput = Console.ReadLine();
+            FavoriteColor = colorInput;
+
+            Console.WriteLine("What is your favorite food?");
+            string foodInput = Console.ReadLine();
+            FavoriteFood = foodInput;
+
+            Console.WriteLine("What is your favorite sport?");
+            string sportInput = Console.ReadLine();
+            FavoriteSport = sportInput;
+
+            Console.WriteLine("What is your favorite shoe brand?");
+            string shoeInput = Console.ReadLine();
+            FavoriteShoeBrand = shoeInput;
+
+            Console.WriteLine("What is your favorite pet animal??");
+            string animalInput = Console.ReadLine();
+            FavoriteAnimal = animalInput;
+
+            Console.WriteLine("What is your favorite car?");
+            string carInput = Console.ReadLine();
+            FavoriteCar = carInput;
+
+            Console.WriteLine("What is your favorite number?");
+            string favNumInput = Console.ReadLine();
+            int favNum = int.Parse(favNumInput);    
         }
         
+        public void finalDetails()
+        {
+            Console.WriteLine("Let's get going with the final, most important part!");
+            Console.WriteLine("Do you have any food allergies? (Yes/No)");
+            string allergyInput = Console.ReadLine().ToLower();
+            Allergies = allergyInput.StartsWith("y");
+
+            Console.WriteLine("Are you Vegan? (Yes/No)");
+            string veganInput = Console.ReadLine().ToLower();
+            Vegan = veganInput.StartsWith("y");
+
+            Console.WriteLine("Are you Right Handed?(Yes/No)");
+            string rightHandInput = Console.ReadLine().ToLower();
+            RightHanded = rightHandInput.StartsWith("y");
+
+            Console.WriteLine("Are you bald?(Yes/No)");
+            string baldHead = Console.ReadLine().ToLower();
+            Bald = baldHead.StartsWith("y");
+
+            Console.WriteLine("How desperate are you for a friend?(0-10)");
+            string desperateInput = Console.ReadLine();
+            DesperationLevel = int.Parse(desperateInput);
+        }
+
+        public void determineAcceptance()
+        {
+            //if desperation 8+, auto deny. if 6-7, accept only if favorite color is green.
+        }
     }
 }
