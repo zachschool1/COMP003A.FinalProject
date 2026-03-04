@@ -53,6 +53,9 @@ namespace COMP003A.FinalProject
                         Console.WriteLine("Okay, fine. I get it. I have plenty of other people looking to be my friend anyways. What makes you special? Maybe you should be asking if I would even want to be friends with YOU! and you stink!");
                         running = false;
                     }
+                } else
+                {
+                    Console.WriteLine("Please answer using Yes/No");
                 }
 
             } while (running);
