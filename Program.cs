@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.ComponentModel.Design;
+using System.Linq.Expressions;
 
 namespace COMP003A.FinalProject
 {
@@ -70,7 +71,33 @@ namespace COMP003A.FinalProject
                     }
                 } else if (response.ToLower().Contains("show")) {
                     Console.WriteLine("Showing List");
-                    foreach(FriendApplication friend in friendApplications)
+                    while (true)
+                    {
+                        Console.WriteLine("1. Show All");
+                        Console.WriteLine("2. Search ");
+                        Console.WriteLine("3. Search and Delete");
+                        Console.WriteLine("4. Exit");
+                        Console.Write("Choice: ");
+
+                        string menuString = Console.ReadLine();
+                        
+                        try {
+                            int menuInput = int.Parse(menuString);
+
+                            switch (menuInput)
+                            {
+                                case 1:
+                                    Console.WriteLine("Showing All Applications");
+                                    break;
+                                case 2:
+                                case 3:
+                                case 4:
+                            }
+                        }
+
+                    }
+
+                    foreach (FriendApplication friend in friendApplications)
                     {
                         friend.ShowApplicationInfo();
                     }
