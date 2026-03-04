@@ -2,6 +2,7 @@
 using System;
 using System.ComponentModel.Design;
 using System.Linq.Expressions;
+using System.Transactions;
 
 namespace COMP003A.FinalProject
 {
@@ -71,7 +72,10 @@ namespace COMP003A.FinalProject
                     }
                 } else if (response.ToLower().Contains("show")) {
                     Console.WriteLine("Showing List");
-                    while (true)
+
+                    bool inMenu = true;
+
+                    while (inMenu)
                     {
                         Console.WriteLine("1. Show All");
                         Console.WriteLine("2. Search ");
@@ -88,18 +92,74 @@ namespace COMP003A.FinalProject
                             {
                                 case 1:
                                     Console.WriteLine("Showing All Applications");
+
+                                    foreach (FriendApplication friend in friendApplications)
+                                    {
+                                        friend.ShowApplicationInfo();
+                                    }
                                     break;
                                 case 2:
+                                    Console.WriteLine("Search for an application by First Name:");
+
+                                    string nameSearch = Console.ReadLine().ToLower();
+                                    foreach (FriendApplication friend in friendApplications)
+                                    {
+                                        if (friend.ApplicantName.ToLower() == nameSearch)
+                                        {
+                                            friend.ShowApplicationInfo();
+                                        }
+                                    }
+                                    break;
                                 case 3:
+                                    Console.WriteLine("Search for an application to delete by First Name");
+                                    string nameDeleteInput = Console.ReadLine().ToLower();
+
+                                    FriendApplication foundPerson = null;
+
+                                    foreach (FriendApplication friend in friendApplications)
+                                    {
+                                        if (friend.ApplicantName == nameDeleteInput)
+                                        {
+                                            foundPerson = friend;
+                                            break;
+                                                                                        
+                                        }
+                                    }
+
+                                    if (foundPerson != null)
+                                    {
+                                        Console.WriteLine($"Found {foundPerson.ApplicantName}. Delete? (yes/no)");
+                                        string confirmDelete = Console.ReadLine().ToLower();
+
+                                        if ( confirmDelete.StartsWith("y"))
+                                        {
+                                            friendApplications.Remove(foundPerson);
+                                            Console.WriteLine("Application Deleted");
+                                        }
+                                    } 
+                                    else
+                                    {
+                                        Console.WriteLine("No Application Found");
+                                    }
+                                        break;
+
+
+                                   
                                 case 4:
+                                    Console.WriteLine("Exiting Menu");
+                                    inMenu = false;
+                                    break;
+                                default:
+                                    Console.WriteLine("Enter a number 1-4");
+
+                                    break;
                             }
                         }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"Error: {e}."); 
 
-                    }
-
-                    foreach (FriendApplication friend in friendApplications)
-                    {
-                        friend.ShowApplicationInfo();
+                        }
                     }
                 } else
                 {
