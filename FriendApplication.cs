@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace COMP003A.FinalProject
@@ -8,17 +9,28 @@ namespace COMP003A.FinalProject
     {
         public int Id;
         public string ApplicationDate;
-        //4 strings plus 1 from date
+        //9 strings plus 1 from date
         public string ApplicantName;
         public string FavoriteMovieGenre;
+        public string FavoriteTvGenre;
         public string FavoriteColor;
         public string FavoriteFood;
-        //4 numeric plus 1 from ID
+        public string FavoriteSport;
+        public string FavoriteShoeBrand;
+        public string FavoriteAnimal;
+        public string Gender;
+        public string FavoriteCar;
+       
+        //6 numeric plus 1 from ID
         public int BirthMonth;
         public int BirthYear;
         public int Siblings;
         public int FavoriteNum;
-        //3 boolean
+        public double ShoeSize;
+        public int NumOfPets;
+        //5 boolean
+        public bool Bald;
+        public bool Vegan;
         public bool RightHanded;
         public bool DietRestricted;
         public bool Allergies;
