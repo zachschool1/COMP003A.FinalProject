@@ -19,7 +19,7 @@ namespace COMP003A.FinalProject
 
             do
             {
-                Console.WriteLine("Do you want to be my friend?");
+                Console.WriteLine("Do you want to be my friend? (Type 'Show' to show every application) ");
                 string response = Console.ReadLine();
 
 
@@ -39,6 +39,8 @@ namespace COMP003A.FinalProject
                         Console.WriteLine("Good Job! Let's Move on to the next part!");
                         app1.GetFavorites();
                         Console.WriteLine("Great, Thats another part down. we're almost done!");
+                        app1.NumberOfThings();
+                        Console.WriteLine("Last set of questions!");
                         app1.finalDetails();
 
                         Console.WriteLine("You were...");
@@ -67,14 +69,16 @@ namespace COMP003A.FinalProject
                         running = false;
                     }
                 } else if (response.ToLower().Contains("show")) {
+                    Console.WriteLine("Showing List");
                     foreach(FriendApplication friend in friendApplications)
                     {
-
+                        friend.ShowApplicationInfo();
                     }
-                }
+                } else
                 {
-                    Console.WriteLine("Please answer using Yes/No");
+                    Console.WriteLine("Please answer Yes or No");
                 }
+
 
             } while (running);
 

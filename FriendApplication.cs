@@ -180,7 +180,7 @@ namespace COMP003A.FinalProject
             }
         }
 
-        public void showApplicationInfo()
+        public void ShowApplicationInfo()
         {
 
             //need: number of siblings,pets,shoe size, and number of fingers.
