@@ -39,15 +39,21 @@ namespace COMP003A.FinalProject
                         Console.WriteLine("Good Job! Let's Move on to the next part!");
                         app1.GetFavorites();
                         Console.WriteLine("Great, Thats another part down. we're almost done!");
+                        app1.finalDetails();
 
-
-
+                        Console.WriteLine("You were...");
+                        app1.determineAcceptance();
+                        Console.WriteLine(app1.Status);
+                        friendApplications.Add(app1);
                         applicationNumber++;
+                        Console.WriteLine("Thank you for submitting!");
+                        
                     }
                     else if (continueResponse.ToLower().StartsWith("n"))
                     {
                         Console.WriteLine("I didn't want to be your friend anyways.");
                         running = false;
+
                     }
                 } else if (response.ToLower().StartsWith("n"))
                 {
@@ -60,7 +66,12 @@ namespace COMP003A.FinalProject
                         Console.WriteLine("Okay, fine. I get it. I have plenty of other people looking to be my friend anyways. What makes you special? Maybe you should be asking if I would even want to be friends with YOU! and you stink!");
                         running = false;
                     }
-                } else
+                } else if (response.ToLower().Contains("show")) {
+                    foreach(FriendApplication friend in friendApplications)
+                    {
+
+                    }
+                }
                 {
                     Console.WriteLine("Please answer using Yes/No");
                 }

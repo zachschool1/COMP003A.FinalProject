@@ -7,36 +7,37 @@ namespace COMP003A.FinalProject
 {
     public class FriendApplication
     {
-        public int Id;//
-        public string ApplicationDate;//
+        public int Id;
+        public string ApplicationDate;
         //9 strings plus 1 from date
-        public string ApplicantName; //
-        public string FavoriteMovieGenre;//
-        public string FavoriteTvGenre;//
+        public string ApplicantName;
+        public string FavoriteMovieGenre;
+        public string FavoriteTvGenre;
         public string FavoriteColor;
         public string FavoriteFood;
         public string FavoriteSport;
         public string FavoriteShoeBrand;
         public string FavoriteAnimal;
-        public string Gender; //
+        public string Gender; 
         public string FavoriteCar;
+        
        
         //6 numeric plus 1 from ID
-        public int BirthMonth;//
+        public int BirthMonth;
         public int BirthYear;
         public int Siblings;
         public int FavoriteNum;
         public double ShoeSize;
+        public double NumberOfFingers;
         public int NumOfPets;
-        //5 boolean
+        //4 boolean
         public bool Bald;
         public bool Vegan;
         public bool RightHanded;
-        public bool DietRestricted;
         public bool Allergies;
         // choice based
         public int DesperationLevel;
-        //Status will basically be if their desperation level is too high, probably some random number depending how i write it up, then they are denied if their desperation level is close to top limit, they will only be accepted if their favorite color is green.. otherwise they are either pending or approved.
+        
         public string Status;
 
 
@@ -108,6 +109,29 @@ namespace COMP003A.FinalProject
             string favNumInput = Console.ReadLine();
             int favNum = int.Parse(favNumInput);    
         }
+
+        public void NumberOfThings()
+        {
+            Console.WriteLine("How many siblings do you have? (enter a number. enter 0 if none.)");
+            string siblingInput = Console.ReadLine();
+            int siblingNum = int.Parse(siblingInput);
+            Siblings = siblingNum;
+
+            Console.WriteLine("How many pets do you have? (enter only a number)");
+            string petsInput = Console.ReadLine();
+            int petsNum = int.Parse(petsInput);
+            NumOfPets = petsNum;
+
+            Console.WriteLine("What is your shoe size? (Numbers and decimals are fine).");
+            string shoeInput = Console.ReadLine();
+            double shoeDouble = double.Parse(shoeInput);
+            ShoeSize = shoeDouble;
+
+            Console.WriteLine("How many fingers do you have?");
+            string fingerInput = Console.ReadLine();
+            double fingerNum = double.Parse(fingerInput);
+            NumberOfFingers = fingerNum;
+        }
         
         public void finalDetails()
         {
@@ -131,6 +155,8 @@ namespace COMP003A.FinalProject
             Console.WriteLine("How desperate are you for a friend?(0-10)");
             string desperateInput = Console.ReadLine();
             DesperationLevel = int.Parse(desperateInput);
+
+            Console.WriteLine("All Done!");
         }
 
         public void determineAcceptance()
@@ -152,6 +178,42 @@ namespace COMP003A.FinalProject
             {
                 Status = "Accepted";
             }
+        }
+
+        public void showApplicationInfo()
+        {
+
+            //need: number of siblings,pets,shoe size, and number of fingers.
+
+            Console.WriteLine("Final Application");
+            Console.WriteLine("******Applicant Information*******");
+            Console.WriteLine($"Name: {ApplicantName}.");
+            Console.WriteLine($"Application ID: {Id}");
+            Console.WriteLine($"Birth Month: {BirthMonth}");
+            Console.WriteLine($"Birth Year: {BirthYear}");
+            Console.WriteLine($"Gender: {Gender}");
+            Console.WriteLine($"Status: {Status}");
+            Console.WriteLine($"Desperation Level: {DesperationLevel}");
+            Console.WriteLine();
+            Console.WriteLine("******* Favorites *******");
+            Console.WriteLine($"Favorite Movie Genre: {FavoriteMovieGenre}.");
+            Console.WriteLine($"Favorite TV Genre: {FavoriteTvGenre}.");
+            Console.WriteLine($"Favorite Sport: {FavoriteSport}.");  
+            Console.WriteLine($"Favorite Color: {FavoriteColor}");
+            Console.WriteLine($"Favorite Shoe: {FavoriteShoeBrand}.");
+            Console.WriteLine($"Favorite Food: {FavoriteFood}.");
+            Console.WriteLine($"Favorite Car: {FavoriteCar}.");
+            Console.WriteLine($"Favorite Animal: {FavoriteAnimal}");
+            Console.WriteLine($"Favorite Number: {FavoriteNum}.");
+            Console.WriteLine("********* Minor Details *********");
+            Console.WriteLine($"Allergic?: {Allergies}.");
+            Console.WriteLine($"Vegan?: {Vegan}");
+            Console.WriteLine($"Right Handed?: {RightHanded}");
+            Console.WriteLine($"Bald?: {Bald}");
+            Console.WriteLine($"Number of Siblings: {Siblings}");
+            Console.WriteLine($"Number of Pets: {NumOfPets}");
+            Console.WriteLine($"Shoe Size: {ShoeSize}");
+            Console.WriteLine($"Number of Fingers: {NumberOfFingers}");
         }
     }
 }
