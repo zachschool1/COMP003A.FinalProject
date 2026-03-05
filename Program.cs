@@ -99,7 +99,7 @@ namespace COMP003A.FinalProject
                                     {
                                         friend.ShowApplicationInfo();
                                     }
-                                    Console.WriteLine($"Total Applications: " + totalApplications);
+                                    Console.WriteLine($"\nTotal Applications: " + totalApplications);
                                     break;
                                 case 2:
                                     Console.WriteLine("Search for an application by First Name:");
@@ -128,7 +128,7 @@ namespace COMP003A.FinalProject
                                                                                         
                                         }
                                     }
-
+                                     
                                     if (foundPerson != null)
                                     {
                                         Console.WriteLine($"Found {foundPerson.ApplicantName}. Delete? (yes/no)");

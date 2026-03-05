@@ -67,6 +67,7 @@ namespace COMP003A.FinalProject
             Console.WriteLine("What is your gender? (Male/Female/Other)");
             string genderInput = Console.ReadLine();
             string gender = genderInput;
+            Gender = gender;
 
         }
 
@@ -107,7 +108,8 @@ namespace COMP003A.FinalProject
 
             Console.WriteLine("What is your favorite number?");
             string favNumInput = Console.ReadLine();
-            int favNum = int.Parse(favNumInput);    
+            int favNum = int.Parse(favNumInput);
+            FavoriteNum = favNum;
         }
 
         public void NumberOfThings()
@@ -206,11 +208,12 @@ namespace COMP003A.FinalProject
             Console.WriteLine($"Favorite Car: {FavoriteCar}.");
             Console.WriteLine($"Favorite Animal: {FavoriteAnimal}");
             Console.WriteLine($"Favorite Number: {FavoriteNum}.");
+            Console.WriteLine();
             Console.WriteLine("********* Minor Details *********");
-            Console.WriteLine($"Allergic?: {Allergies}.");
-            Console.WriteLine($"Vegan?: {Vegan}");
-            Console.WriteLine($"Right Handed?: {RightHanded}");
-            Console.WriteLine($"Bald?: {Bald}");
+            Console.WriteLine($"Allergies?: {Allergies}.");
+            Console.WriteLine($"Are you vegan?: {Vegan}");
+            Console.WriteLine($"Are you Right Handed?: {RightHanded}");
+            Console.WriteLine($"You wouldn't happen to be Bald, would you??: {Bald}");
             Console.WriteLine($"Number of Siblings: {Siblings}");
             Console.WriteLine($"Number of Pets: {NumOfPets}");
             Console.WriteLine($"Shoe Size: {ShoeSize}");
